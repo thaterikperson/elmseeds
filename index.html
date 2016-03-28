@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<div class="container">
+
+  <div id="main-video" class="row">
+    <div class="twelve columns">
+      <video width="100%" height="100%" controls poster="{{ site.posts.first.full_preview_src }}">
+        <source src="{{ site.posts.first.video_src }}" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+  <div class="row main-post-meta">
+    <h2>
+      <a href="{{ site.posts.first.url | prepend: site.baseurl }}">{{ site.posts.first.title }}</a>
+      <small>{{ site.posts.first.date | date: "%b %-d, %Y" }}</small>
+    </h2>
+    <div class="twelve columns first-post-description">
+      {{ site.posts.first.excerpt }}
+    </div>
+  </div>
+</div>
+
+<div class="previous-episodes-bg">
+  <div class="container">
+    <div class="row recent">
+      <h3>Recent Episodes</h4>
+    </div>
+    <div class="row">
+      {% for post in site.posts limit:3 offset:1 %}
+        <div class="one-third column">
+          {% include little-vid.html post=post %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+---
+layout: default
+---
+<div class="container">
+  <div id="main-video" class="row">
+    <video width="100%" height="100%" controls poster="{{ site.posts.first.full_preview_src }}">
+      <source src="{{ site.posts.first.video_src }}" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="row main-post-meta">
+    <div class="twelve columns">
+      <h2>
+        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        <small>{{ page.date | date: "%b %-d, %Y" }}</small>
+      </h2>
+    </div>
+    <div class="twelve columns first-post-description">
+      {{ content }}
+    </div>
+  </div>
+</div>
+
+<div class="previous-episodes-bg">
+  <div class="container">
+    <div class="row">
+      {% if page.previous %}
+        <div class="one-third column little-post-meta">
+          <h3>Previous Episode</h3>
+          {% include little-vid.html post=page.previous %}
+        </div>
+      {% endif %}
+      {% if page.next %}
+        {% unless page.previous %}
+          <div class="one-third column">&nbsp;</div>
+        {% endunless %}
+        <div class="one-third column">&nbsp;</div>
+        <div class="one-third column little-post-meta">
+          <h3>Next Episode</h3>
+          {% include little-vid.html post=page.next %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
