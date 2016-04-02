@@ -3,9 +3,7 @@ layout: post
 title:  "Debugging"
 date:   2016-03-27 20:00:00 -0500
 categories:
-full_preview_src: https://s3.amazonaws.com/elmseeds/ep-001/cover-art-960.png
-thumb_preview_src: https://s3.amazonaws.com/elmseeds/ep-001/cover-art-294.png
-video_src: https://s3.amazonaws.com/elmseeds/ep-001/ep-001.mp4
+label: ep-001
 tiny_description: Learn to use the two basic functions in the Debug module.
 ---
 
