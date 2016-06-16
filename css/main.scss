@@ -32,11 +32,20 @@ header {
   h1 {
     position: relative;
 
+    .right-text {
+      @media (min-width: 550px) {
+        text-align: right;
+      }
+    }
+
     small {
-      position: absolute;
-      bottom: 5px;
-      right: 5px;
       font-size: 50%;
+      @media (min-width: 560px) {
+        font-size: 40%;
+      }
+      @media (min-width: 730px) {
+        font-size: 50%;
+      }
       color: #fff;
 
       a {
@@ -44,9 +53,15 @@ header {
       }
     }
 
-    a {
+    .site-title {
       color: #fdf6e3;
       text-decoration: none;
+      font-size: 4.3rem;
+
+      @media (min-width: 730px) {
+        font-size: 5rem;
+      }
+
       &:hover {
         color: #fdf6e3;
         border-bottom: 1px solid #fdf6e3;
@@ -94,7 +109,8 @@ footer {
   }
 
   .container {
-    padding: 1rem 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }
 
@@ -103,8 +119,6 @@ footer {
 }
 
 .little-vid {
-  height: 165px;
-
   img {
     width: 100%;
     height: 100%;
@@ -139,20 +153,5 @@ footer {
   h3 {
     color: #4d7e7a;
     font-size: 3.6rem;
-  }
-}
-
-ul.archive {
-  list-style: none;
-
-  .little-vid {
-    width: 175px;
-    height: 99px;
-    float: left;
-  }
-
-  .little-post-meta {
-    float: left;
-    margin-left: 10px;
   }
 }

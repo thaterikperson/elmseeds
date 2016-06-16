@@ -38,14 +38,11 @@ layout: default
       <h3>Archive</h4>
     </div>
     <div class="row">
-      <ul class="archive">
         {% for post in site.posts limit:20 offset:4 %}
-          <li class="">
-            {% include little-vid.html post=post %}
-            <div style="clear: both"></div>
-          </li>
+          <div class="row">
+            {% include archive-vid.html post=post %}
+          </div>
         {% endfor %}
-      </ul>
     </div>
   </div>
 </div>

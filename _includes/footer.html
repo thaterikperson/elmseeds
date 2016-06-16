@@ -1,12 +1,14 @@
 <footer class="site-footer">
   <div class="container">
-    <a href="{{ "/feed.xml" | prepend: site.baseurl }}">Subscribe via RSS</a>
-    &middot;
-    <a href="https://twitter.com/thaterikperson">@thaterikperson</a>
-    &middot;
-    <a href="https://thaterikperson.com">thaterikperson.com</a>
-    &middot;
-    <a href="https://theredace.thaterikperson.com/">The Red Ace</a>
+    <div class="row">
+      <a href="{{ "/feed.xml" | prepend: site.baseurl }}">Subscribe via RSS</a>
+      &middot;
+      <a href="https://twitter.com/thaterikperson">@thaterikperson</a>
+      &middot;
+      <a href="https://thaterikperson.com">thaterikperson.com</a>
+      &middot;
+      <a href="https://theredace.thaterikperson.com/">The Red Ace</a>
+    </div>
   </div>
   {% if jekyll.environment == "production" %}
      {% include analytics.html %}
