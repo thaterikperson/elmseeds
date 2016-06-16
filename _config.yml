@@ -9,7 +9,7 @@
 title: Elmseeds
 description: > # this means to ignore newlines until "baseurl:"
   Short screencasts to teach you the Elm programming language.
-  Each video tutorial walks through a library, tools, or language feature.
+  Each video tutorial walks through a library, tool, or language feature.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://elmseeds.thaterikperson.com" # the base hostname & protocol for your site
 twitter_username: thaterikperson

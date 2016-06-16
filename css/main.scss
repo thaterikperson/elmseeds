@@ -30,6 +30,20 @@ header {
   padding-bottom: 10rem;
 
   h1 {
+    position: relative;
+
+    small {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      font-size: 50%;
+      color: #fff;
+
+      a {
+        color: #f4d06b;
+      }
+    }
+
     a {
       color: #fdf6e3;
       text-decoration: none;
@@ -61,7 +75,7 @@ header {
   padding-bottom: 4rem;
 
   h3 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #4d7e7a;
   }
@@ -112,16 +126,33 @@ footer {
     a {
       text-decoration: none;
       border-bottom: 1px solid #66cbea;
+      font-size: 2.5rem;
     }
   }
 
   .little-post-date {
-    font-size: 50%;
+    font-size: 60%;
   }
 }
 
 .recent {
   h3 {
     color: #4d7e7a;
+    font-size: 3.6rem;
+  }
+}
+
+ul.archive {
+  list-style: none;
+
+  .little-vid {
+    width: 175px;
+    height: 99px;
+    float: left;
+  }
+
+  .little-post-meta {
+    float: left;
+    margin-left: 10px;
   }
 }
