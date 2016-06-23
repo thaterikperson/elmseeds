@@ -13,7 +13,8 @@ Read the [full guide on ports](https://evancz.gitbooks.io/an-introduction-to-elm
 
 ### Samples
 
-{% highlight elm %}
+##### Main module
+```
 port module Core exposing (..)
 
 import --…
@@ -28,12 +29,16 @@ main = Html.program
   , view = view
   , subscriptions = (\model -> dealOne DealOneCardMsg)
   }
-{% endhighlight %}
+```
 
-{% highlight js %}
+##### index.html
+```
+<script>
+core = Elm.Core.embed(/*…*/)
 core.ports.dealOne.send(true);
 
 core.ports.sendToJs.subscribe(function (val) {
   console.log(val);
 });
-{% endhighlight %}
+</script>
+```

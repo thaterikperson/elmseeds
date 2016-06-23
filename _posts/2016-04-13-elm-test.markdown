@@ -11,7 +11,7 @@ The purely functional nature of Elm makes testing a wonderful experience. In thi
 
 ### Samples
 
-{% highlight elm %}
+```
 board0 = [Ace Diamonds, King Diamonds, Jack Hearts, Ten Hearts, Nine Clubs]
 board1 = [King Diamonds, King Clubs, Jack Hearts, Ten Hearts, Nine Clubs]
 
@@ -25,7 +25,7 @@ hasOnePairTests =
     , test "One pair in hand" <| assert <| hasOnePair board0 hand1
     , test "One pair between" <| assert <| hasOnePair board0 hand0
     ]
-{% endhighlight %}
+```
 
 ### Links
 * [elm-test module](http://package.elm-lang.org/packages/deadfoxygrandpa/elm-test/3.1.1/)

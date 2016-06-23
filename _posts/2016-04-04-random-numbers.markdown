@@ -11,17 +11,17 @@ Getting random numbers in Elm requires basing your initial seed on the current t
 
 ### Samples
 
-**Core.elm**
-{% highlight elm %}
+##### Main module
+```
 port currentTime : Int
-{% endhighlight %}
+```
 
-**index.html**
-{% highlight html %}
+##### index.html
+```
 <script>
 Elm.embed(Elm.Core, div, { currentTime: new Date().getTime() });
 </script>
-{% endhighlight %}
+```
 
 ### Links
 * [Elm's Random Library Docs](http://package.elm-lang.org/packages/elm-lang/core/3.0.0/Random)

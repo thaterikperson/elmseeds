@@ -11,13 +11,13 @@ Basic debugging in Elm uses two methods. `Debug.log` and `Debug.crash`. Use `log
 
 ### Samples
 
-{% highlight elm linenos %}
+```
 Array.toList (Debug.log "shuffled" (shuffle fullDeck 0 seed))
 
 case Array.get i deck of
   Nothing -> Debug.crash "index out of bounds"
   Just c -> c
-{% endhighlight %}
+```
 
 ### Links
 * [Debug Elm Docs](http://package.elm-lang.org/packages/elm-lang/core/3.0.0/Debug)

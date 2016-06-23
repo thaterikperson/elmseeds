@@ -14,7 +14,8 @@ Check out a good example in [evancz/elm-http's Http.js](https://github.com/evanc
 
 ### Samples
 
-{% highlight js %}
+##### Native/LocalStorage.js
+```
 var _user$project$Native = function() {
 
   function setItem(key, value) {
@@ -28,7 +29,7 @@ var _user$project$Native = function() {
     setItem: F2(setItem)
   }
 }();
-{% endhighlight %}
+```
 
 ### Links
 * [evancz/elm-http's Http.js](https://github.com/evancz/elm-http/blob/3.0.1/src/Native/Http.js)
