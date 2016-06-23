@@ -22,7 +22,7 @@ $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
-@import "normalize", "skeleton", "syntax-highlighting";
+@import "normalize", "skeleton", "highlight";
 
 header {
   background-color: #339933;
@@ -50,6 +50,10 @@ header {
 
       a {
         color: #f4d06b;
+
+        &:hover {
+          color: darken(#f4d06b, 20%)
+        }
       }
     }
 

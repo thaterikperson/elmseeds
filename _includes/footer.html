@@ -10,10 +10,12 @@
       <a href="https://theredace.thaterikperson.com/">The Red Ace</a>
     </div>
   </div>
+  <script src="/scripts/highlight.pack.js"></script>
   {% if jekyll.environment == "production" %}
      {% include analytics.html %}
   {% endif %}
   <script>
+    hljs.initHighlightingOnLoad();
     WebFontConfig={google:{families:['Raleway:400,300,600']}};
     (function(d) {
       var wf = d.createElement('script'), s = d.scripts[0];
