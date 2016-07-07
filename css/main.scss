@@ -24,6 +24,10 @@ $grey-color-dark:  darken($grey-color, 25%);
 
 @import "normalize", "skeleton", "highlight";
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway";
+}
+
 header {
   background-color: #339933;
   padding-top: 3rem;
@@ -151,11 +155,25 @@ footer {
   .little-post-date {
     font-size: 60%;
   }
+
+  .little-post-description {
+    font-family: $base-font-family;
+    font-weight: 300;
+    letter-spacing: 0.6px;
+  }
 }
 
 .recent {
   h3 {
     color: #4d7e7a;
     font-size: 3.6rem;
+  }
+}
+
+.first-post-description {
+  p {
+    font-family: $base-font-family;
+    font-weight: 300;
+    letter-spacing: 0.6px;
   }
 }
