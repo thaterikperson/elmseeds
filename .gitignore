@@ -4,3 +4,4 @@ output.js
 elm.js
 .sass-cache/
 _site/
+node_modules/
