@@ -141,6 +141,13 @@ footer {
     font-size: 50%;
     color: #777;
   }
+
+  #links + ul {
+    li {
+      margin-bottom: 0;
+      font-size: 2rem;
+    }
+  }
 }
 
 .little-post-meta {
@@ -175,5 +182,9 @@ footer {
     font-family: $base-font-family;
     font-weight: 300;
     letter-spacing: 0.6px;
+
+    code {
+      padding: 0 .2rem;
+    }
   }
 }
