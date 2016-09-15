@@ -5,6 +5,7 @@ html * {
 body {
   background-color: #339933;
   padding-top: 3rem;
+  color: #fff;
 }
 
 h2.card-desc {
