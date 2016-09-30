@@ -1,0 +1,42 @@
+---
+layout: post
+title:  "Elm-Test 2.1"
+date:   2016-09-30 11:11:00 -0400
+categories:
+label: ep-011
+tiny_description: Elm Test got an upgrade, learn how to upgrade your code.
+---
+
+[elm-community/elm-test](http://package.elm-lang.org/packages/elm-community/elm-test/latest) has seen a significant API change since Elmseed's [first video on elm-test](https://elmseeds.thaterikperson.com/elm-test). It looks a little more like [RSpec](http://rspec.info) and now uses the `Expect` module to test values.
+
+### Examples
+
+```bash
+$ elm-package install elm-community/elm-test
+$ elm-package install rtfeldman/html-test-runner
+```
+
+```elm
+import Expect
+import Test exposing (Test, describe, test)
+import Test.Runner.Html
+
+splitTests : Test
+splitTests =
+  describe "isSplittable"
+    [ test "Two different cards" <| \() -> isSplittable aS9D |> Expect.equal False
+    , test "Different cards, same suit" <| \() -> isSplittable aS9S |> Expect.equal False
+    , test "Same cards" <| \() -> isSplittable aSaD |> Expect.equal True
+    , test "Two face cards" <| \() -> isSplittable tHqC |> Expect.equal True
+    ]
+
+main : Program Never
+main =
+  Test.Runner.Html.run splitTests
+```
+
+
+### Links
+
+* [elm-community/elm-test](http://package.elm-lang.org/packages/elm-community/elm-test/latest)
+* [rtfeldman/html-test-runner](http://package.elm-lang.org/packages/rtfeldman/html-test-runner/latest)
