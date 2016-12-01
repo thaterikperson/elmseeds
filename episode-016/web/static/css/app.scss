@@ -1,0 +1,73 @@
+@import "normalize", "skeleton";
+
+html * {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #339933;
+  padding-top: 3rem;
+  color: #fff;
+}
+
+a {
+  color: #fff;
+
+  &:hover {
+    color: lighten(#339933, 40%);
+  }
+}
+
+h2.card-desc {
+  color: #fff;
+}
+
+button {
+  background-color: #eee;
+  border-color: #ccc;
+  font-size: 1.5rem;
+}
+
+.card-row {
+  min-height: 320px;
+  position: relative;
+}
+
+.deck {
+  background-color: #444;
+  border-radius: 10px;
+  padding: 10px;
+  height: 300px;
+  width: 200px;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #444;
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  box-shadow: 1px 1px 6px #777;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  height: 300px;
+  width: 200px;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #444;
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  box-shadow: 1px 1px 6px #777;
+}
+
+.card.discarded {
+  left: 220px;
+  box-shadow: none;
+}
+
+.error {
+  color: #993333;
+}

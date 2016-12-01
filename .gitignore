@@ -5,3 +5,6 @@ elm.js
 .sass-cache/
 _site/
 node_modules/
+deps/
+priv/static/*
+_build
