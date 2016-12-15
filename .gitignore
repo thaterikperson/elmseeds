@@ -8,3 +8,4 @@ node_modules/
 deps/
 priv/static/*
 _build
+main.js

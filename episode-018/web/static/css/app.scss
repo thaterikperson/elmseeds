@@ -1,0 +1,110 @@
+@import "normalize", "skeleton";
+
+html * {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #339933;
+  padding-top: 3rem;
+  color: #fff;
+}
+
+a {
+  color: #fff;
+
+  &:hover {
+    color: lighten(#339933, 40%);
+  }
+}
+
+h2.card-desc {
+  color: #fff;
+}
+
+button {
+  background-color: #eee;
+  border-color: #ccc;
+  font-size: 1.5rem;
+}
+
+.card-row {
+  min-height: 320px;
+  position: relative;
+}
+
+.deck {
+  border-radius: 10px;
+  padding: 10px;
+  height: 300px;
+  width: 200px;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #444;
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  box-shadow: 1px 1px 6px #777;
+}
+
+.card {
+  border-radius: 10px;
+  padding: 10px;
+  height: 300px;
+  width: 200px;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #444;
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  box-shadow: 1px 1px 6px #777;
+}
+
+.card.discarded {
+  left: 220px;
+  box-shadow: none;
+}
+
+.error {
+  color: #993333;
+}
+
+.links {
+  text-align: right;
+  a {
+    margin-left: 10px;
+  }
+}
+
+.black {
+  .card {
+    background-color: #fff;
+  }
+
+  .deck {
+    background-color: #444;
+  }
+}
+
+.red {
+  .card  {
+    background-color: #333;
+    color: #eee;
+  }
+
+  .deck {
+    background-color: #833;
+  }
+}
+
+.blue {
+  .card  {
+    background-color: #ccf;
+    color: #338;
+  }
+
+  .deck {
+    background-color: #338;
+  }
+}
