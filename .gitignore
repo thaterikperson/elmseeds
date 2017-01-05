@@ -9,3 +9,5 @@ deps/
 priv/static/*
 _build
 main.js
+*.css.map
+*.js.map
