@@ -1,0 +1,129 @@
+module View exposing (..)
+
+import Animation
+import Blackjack exposing (Card, CardType(..), CardSuit(..), suitOfCard, typeOfCard, bestScore, newHand, addCardToHand)
+import Date exposing (Date, Month(..))
+import Html exposing (..)
+import Html.Attributes exposing (..)
+import Html.Events exposing (..)
+import Json.Decode as Json
+import Model exposing (..)
+import Routes exposing (Page(..))
+import ViewHelper exposing (..)
+
+
+aboutView : Model -> Html Msg
+aboutView model =
+    div [ class "main container" ]
+        [ div [ class "row" ]
+            [ div [ class "eight columns offset-by-two" ]
+                [ h1 [] [ text "Blackjack by Elmseeds" ]
+                , p []
+                    [ text "A work in progress Blackjack game."
+                    ]
+                , p []
+                    [ text "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas augue porttitor est cursus, non interdum diam luctus. Duis ac auctor quam, eget auctor erat. In porttitor turpis et libero iaculis vestibulum. Cras interdum mi in arcu sagittis dapibus. Suspendisse potenti. Duis id lectus luctus lorem tristique interdum ornare eu lorem. Vivamus eleifend aliquet vulputate. Quisque pretium semper elementum. Vivamus at purus eleifend, viverra nibh nec, euismod felis. Nullam condimentum venenatis elit, id vestibulum leo accumsan at. Nulla sit amet turpis ipsum. Quisque placerat interdum erat a pulvinar. Sed tristique, nisl quis aliquam commodo, metus lectus blandit erat, non porttitor sapien eros eu enim. Sed hendrerit turpis nec risus congue, in lacinia ipsum pretium. Suspendisse a ultricies diam, sit amet ornare augue. Aenean mollis sapien sit amet ligula vestibulum rhoncus. In eget ipsum mollis, consectetur libero nec, venenatis odio. Etiam semper quam vel imperdiet varius."
+                    ]
+                , p []
+                    [ a [ href "/", onLinkClick (NavigateTo About) ] [ text "Home" ]
+                    ]
+                ]
+            ]
+        ]
+
+
+onLinkClick : msg -> Attribute msg
+onLinkClick msg =
+    onWithOptions "click"
+        { stopPropagation = True
+        , preventDefault = True
+        }
+        (Json.succeed msg)
+
+
+homeView : Model -> Html Msg
+homeView model =
+    customThemeView "black" model
+
+
+customThemeView : String -> Model -> Html Msg
+customThemeView theme model =
+    let
+        deckView =
+            div [ class "deck" ] []
+
+        cardRowChildren =
+            deckView
+                :: (List.map2
+                        (\card style ->
+                            div
+                                [ class "card" ]
+                                [ div
+                                    (class "back" :: Animation.render style.back)
+                                    [ text "back" ]
+                                , div
+                                    (classList [ ( "front", True ), ( "red", isRedSuit card ) ] :: Animation.render style.front)
+                                    [ label [] [ text <| cardTypeText card ]
+                                    , label [] [ text <| suitText card ]
+                                    , label [ class "flip card-suit" ] [ text <| suitText card ]
+                                    , label [ class "flip card-type" ] [ text <| cardTypeText card ]
+                                    ]
+                                ]
+                        )
+                        (model.hand ++ (List.reverse model.dealerHand))
+                        (model.cardStyles ++ (List.reverse model.dealerCardStyles))
+                   )
+    in
+        div [ class ("main container " ++ theme) ]
+            [ div [ class "row card-row" ] cardRowChildren
+            , div [ class "row" ]
+                [ div [ class "one-third column" ]
+                    [ button [ onClick DealHand ] [ text "Deal" ]
+                    ]
+                ]
+            ]
+
+
+navView : Model -> Html Msg
+navView model =
+    let
+        styles =
+            Animation.render model.menuStyle
+
+        attributes =
+            class "submenu" :: styles
+    in
+        nav []
+            [ div [ class "menu" ]
+                [ a [ href "#", onLinkClick ToggleMenu ] [ text "Menu" ]
+                , span [ class "title" ] [ text "Elm Blackjack" ]
+                ]
+            , div [ class "submenu-w" ]
+                [ div attributes
+                    [ a [ href "/", onLinkClick (NavigateTo Home) ] [ text "Black Theme" ]
+                    , a [ href "/theme/blue", onLinkClick (NavigateTo (Theme "blue")) ] [ text "Blue Theme" ]
+                    , a [ href "/theme/red", onLinkClick (NavigateTo (Theme "red")) ] [ text "Red Theme" ]
+                    , a [ href "/about", onLinkClick (NavigateTo About) ] [ text "About" ]
+                    ]
+                ]
+            ]
+
+
+mainView : Model -> Html Msg
+mainView model =
+    let
+        bodyView =
+            case model.page of
+                Home ->
+                    homeView model
+
+                About ->
+                    aboutView model
+
+                Theme color ->
+                    customThemeView color model
+    in
+        div []
+            [ navView model
+            , bodyView
+            ]
