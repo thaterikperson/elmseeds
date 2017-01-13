@@ -4,6 +4,7 @@ title:  "Testing"
 date:   2016-04-13 09:00:00 -0500
 categories:
 label: ep-003
+number: 3
 tiny_description: Using the elm-test module.
 ---
 

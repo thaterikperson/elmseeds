@@ -4,6 +4,7 @@ title:  "Json.Decode.Extra"
 date:   2016-09-15 10:30:00 -0500
 categories:
 label: ep-010
+number: 10
 tiny_description: Use Json.Decode.Extra when Json.Decode isn't enough.
 ---
 

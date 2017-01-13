@@ -4,6 +4,7 @@ title:  "Random Numbers"
 date:   2016-04-04 09:00:00 -0500
 categories:
 label: ep-002
+number: 2
 tiny_description: Learn how to incorporate basic random numbers.
 ---
 

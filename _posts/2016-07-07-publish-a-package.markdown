@@ -4,6 +4,7 @@ title:  "Publish a Package"
 date:   2016-07-07 12:30:00 -0500
 categories:
 label: ep-007
+number: 7
 tiny_description: Create and publish your own package.
 ---
 

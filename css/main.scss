@@ -2,64 +2,54 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 @charset "utf-8";
+@import "tachyons", "normalize", "highlight";
 
+$bright-color: #339933;
+$heading-color: darken($bright-color, 15%);
+$light-heading-color: lighten($heading-color, 65%);
 
+p {
+  @extend .lh-copy;
+}
 
-// Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+.archive-header {
+  @extend .pb4;
+}
 
-$spacing-unit:     30px;
+.main-header {
+  @extend .pb6;
 
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-@import "normalize", "skeleton", "highlight";
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway";
+  .right-text {
+    @extend .mb5;
+  }
 }
 
 header {
-  background-color: #339933;
-  padding-top: 3rem;
-  padding-bottom: 10rem;
+  @extend .pt2;
+  background-color: $bright-color;
+
+  .title {
+    @extend .fl-ns, .w-50-ns;
+  }
+
+  .right-text {
+    @extend .tr-ns, .f4, .white, .fl-ns, .w-50-ns, .pl4-ns;
+
+    @media #{$breakpoint-not-small} {
+      margin-top: 80px;
+    }
+
+    a {
+      color: #f4d06b;
+
+      &:hover {
+        color: darken(#f4d06b, 20%)
+      }
+    }
+  }
 
   h1 {
-    position: relative;
-
-    .right-text {
-      @media (min-width: 550px) {
-        text-align: right;
-      }
-    }
-
-    small {
-      font-size: 50%;
-      @media (min-width: 560px) {
-        font-size: 40%;
-      }
-      @media (min-width: 730px) {
-        font-size: 50%;
-      }
-      color: #fff;
-
-      a {
-        color: #f4d06b;
-
-        &:hover {
-          color: darken(#f4d06b, 20%)
-        }
-      }
-    }
+    @extend .mb0;
 
     .site-title {
       color: #fdf6e3;
@@ -76,14 +66,15 @@ header {
       }
 
       .title-left-half {
+        @extend .fw2;
         &:hover {
           color: #fdf6e3;
         }
       }
 
       .title-right-half {
+        @extend .fw4;
         color: #f4d06b;
-        font-weight: 600;
         &:hover {
           color: #f4d06b;
         }
@@ -92,15 +83,21 @@ header {
   }
 }
 
+.container {
+  @extend .mh3, .mh4-m, .mh6-l;
+}
+
 .previous-episodes-bg {
-  background-color: #eee;
-  padding-top: 2rem;
-  padding-bottom: 4rem;
+  @extend .bg-light-gray, .pv3;
 
   h3 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #4d7e7a;
+    @extend .f1, .lh-title, .mb3;
+    color: $heading-color;
+
+    a {
+      @extend .f4, .ml3;
+      color: $bright-color;
+    }
   }
 }
 
@@ -135,55 +132,117 @@ footer {
 }
 
 .main-post-meta {
-  margin-bottom: 8rem;
+  @extend .mb5;
 
-  small {
-    font-size: 50%;
-    color: #777;
+  h2 {
+    @extend .f2, .mb0;
+    a {
+      color: $heading-color;
+
+      &:hover {
+        background: $light-heading-color;
+        outline: 0.5rem solid $light-heading-color;
+      }
+    }
+    small {
+      @extend .ttu, .silver, .tracked-tight, .f5;
+    }
   }
 
   #links + ul {
     li {
-      margin-bottom: 0;
-      font-size: 2rem;
+      @extend .mb2;
+    }
+    a {
+      color: $heading-color;
     }
   }
 }
 
+.recent-ep {
+  @extend .fl-ns, .w-33-ns, .ph2-ns, .mb4;
+}
+
 .little-post-meta {
-  h3 {
+  .little-post-title {
     a {
-      text-decoration: none;
-      border-bottom: 1px solid #66cbea;
-      font-size: 2.5rem;
+      @extend .f3, .fw6;
+      color: $heading-color;
+
+      &:hover {
+        background: $light-heading-color;
+        outline: 0.25rem solid $light-heading-color;
+      }
+    }
+
+    .little-post-date {
+      @extend .ttu, .tracked-tight, .f6, .mid-gray, .fw2;
     }
   }
 
-  .little-post-date {
-    font-size: 60%;
-  }
-
   .little-post-description {
-    font-family: $base-font-family;
-    font-weight: 300;
-    letter-spacing: 0.6px;
+    @extend .mt1;
+  }
+}
+
+.archive {
+  @extend .ma0, .pa0, .list;
+
+  li {
+    @extend .mt4, .pt4, .bt;
+    border-color: $heading-color;
+
+    &:last-child {
+      @extend .mb4, .pb4, .bb;
+    }
+
+    .little-post-title a {
+      @extend .mr1;
+    }
+
+    .little-post-date {
+      @extend .db, .dib-ns;
+    }
   }
 }
 
 .recent {
-  h3 {
-    color: #4d7e7a;
-    font-size: 3.6rem;
-  }
+  @extend .f1, .lh-title;
+  color: $heading-color;
 }
 
 .first-post-description {
   p {
-    font-family: $base-font-family;
-    letter-spacing: 0.6px;
 
     code {
       padding: 0 .2rem;
     }
+  }
+}
+
+.archive-page {
+  h2 {
+    @extend .f1, .lh-title, .mb0;
+    color: $heading-color;
+  }
+
+  h3 {
+    @extend .f3, .ttu, .lh-title, .mb3, .mt0;
+    color: $bright-color;
+  }
+}
+
+.pagination {
+  @extend .mb6;
+
+  a {
+    @extend .br2, .ph3, .pv2, .f5, .no-underline, .dib, .grow;
+    border-bottom: 2px solid darken($heading-color, 10%);
+    background: $heading-color;
+    color: white;
+  }
+
+  .page-number {
+    @extend .mh2, .f4;
   }
 }

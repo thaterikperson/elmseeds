@@ -4,11 +4,14 @@
   </a>
 </div>
 <div class="little-post-meta">
-  <h3>
-    <a href="{{ include.post.url | prepend: site.baseurl }}">{{ include.post.title }}</a>
-    <small class="little-post-date">{{ include.post.date | date: "%b %-d, %Y" }}</small>
-  </h3>
-  <div class="little-post-description">
-    {{ include.post.tiny_description }}
+  <div class="little-post-title">
+    <a href="{{ include.post.url | prepend: site.baseurl }}">
+      {{ include.post.number }}:
+      {{ include.post.title }}
+    </a>
+    <div class="little-post-date">{{ include.post.date | date: "%b %-d, %Y" }}</div>
   </div>
+  <p class="little-post-description">
+    {{ include.post.tiny_description }}
+  </p>
 </div>

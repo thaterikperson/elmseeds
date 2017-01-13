@@ -4,6 +4,7 @@ title:  "Animations"
 date:   2016-06-23 10:00:00 -0500
 categories:
 label: ep-006
+number: 6
 tiny_description: Animate your HTML the Elm way.
 ---
 

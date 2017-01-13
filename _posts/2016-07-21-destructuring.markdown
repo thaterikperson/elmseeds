@@ -4,6 +4,7 @@ title:  "Destructuring"
 date:   2016-07-21 10:15:00 -0500
 categories:
 label: ep-008
+number: 8
 tiny_description: Use destructuring to test and bind variables with fewer lines of code.
 ---
 

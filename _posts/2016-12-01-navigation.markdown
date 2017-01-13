@@ -4,6 +4,7 @@ title:  "Navigation"
 date:   2016-12-01 11:03:00 -0500
 categories:
 label: ep-016
+number: 16
 tiny_description: Update the browser's url bar and history with Elm.
 ---
 

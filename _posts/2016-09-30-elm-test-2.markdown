@@ -4,6 +4,7 @@ title:  "Elm-Test 2.1"
 date:   2016-09-30 11:11:00 -0400
 categories:
 label: ep-011
+number: 11
 tiny_description: Elm Test got an upgrade, learn how to upgrade your code.
 ---
 

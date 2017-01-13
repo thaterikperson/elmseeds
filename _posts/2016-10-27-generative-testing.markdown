@@ -4,6 +4,7 @@ title:  "Generative Testing"
 date:   2016-10-27 11:44:00 -0400
 categories:
 label: ep-012
+number: 12
 tiny_description: Generative testing uses a little code to write a lot of tests.
 ---
 

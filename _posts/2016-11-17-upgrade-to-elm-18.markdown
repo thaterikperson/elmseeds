@@ -4,6 +4,7 @@ title:  "Upgrade to Elm 0.18"
 date:   2016-11-17 15:52:00 -0400
 categories:
 label: ep-015
+number: 15
 tiny_description: Upgrade your project from Elm 0.17 to Elm 0.18.
 ---
 

@@ -4,6 +4,7 @@ title:  "Elm & Phoenix"
 date:   2016-11-03 11:42:00 -0400
 categories:
 label: ep-013
+number: 13
 tiny_description: Incorporate Elm into your Phoenix application.
 ---
 

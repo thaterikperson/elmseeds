@@ -4,6 +4,7 @@ title:  "Function Composition"
 date:   2016-12-15 11:28:00 -0500
 categories:
 label: ep-018
+number: 18
 tiny_description: Combine multiple functions into a single function.
 ---
 

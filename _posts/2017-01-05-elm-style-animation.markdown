@@ -4,6 +4,7 @@ title:  "Elm-Style-Animation"
 date:   2017-01-05 14:56:00 -0500
 categories:
 label: ep-019
+number: 19
 tiny_description: Create basic HTML animations.
 ---
 

@@ -4,6 +4,7 @@ title:  "Ports"
 date:   2016-06-09 14:00:00 -0500
 categories:
 label: ep-004
+number: 4
 tiny_description: Using ports in Elm 0.17+.
 ---
 

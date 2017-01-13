@@ -4,6 +4,7 @@ title:  "Auto-Compilation"
 date:   2016-08-04 12:00:00 -0500
 categories:
 label: ep-009
+number: 9
 tiny_description: Use Grunt to automatically compile your Elm project when a file is saved.
 ---
 

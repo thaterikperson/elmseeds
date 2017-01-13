@@ -4,6 +4,7 @@ title:  "Advanced Tasks"
 date:   2016-11-10 14:55:00 -0500
 categories:
 label: ep-014
+number: 14
 tiny_description: Combine and manipulate tasks with these advanced functions.
 ---
 

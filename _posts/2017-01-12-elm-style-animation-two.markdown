@@ -4,6 +4,7 @@ title:  "Advanced Animations"
 date:   2017-01-12 11:02:00 -0500
 categories:
 label: ep-020
+number: 20
 tiny_description: Create advanced HTML animations.
 ---
 

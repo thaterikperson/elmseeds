@@ -4,6 +4,7 @@ title:  "Url Parser"
 date:   2016-12-08 13:51:00 -0500
 categories:
 label: ep-017
+number: 17
 tiny_description: Parse the browser's url to update your model.
 ---
 

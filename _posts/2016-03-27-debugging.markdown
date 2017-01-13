@@ -4,6 +4,7 @@ title:  "Debugging"
 date:   2016-03-27 20:00:00 -0500
 categories:
 label: ep-001
+number: 1
 tiny_description: Learn to use the two basic functions in the Debug module.
 ---
 

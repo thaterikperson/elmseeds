@@ -3,20 +3,21 @@ layout: default
 ---
 <div class="container">
 
-  <div id="main-video" class="row">
-    <div class="twelve columns">
-      <video width="100%" height="100%" controls poster="https://s3.amazonaws.com/elmseeds/{{ site.posts.first.label }}/cover-art-1280.png">
-        <source src="https://s3.amazonaws.com/elmseeds/{{ site.posts.first.label }}/{{ site.posts.first.label }}.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
+  <div id="main-video">
+    <video width="100%" height="100%" controls poster="https://s3.amazonaws.com/elmseeds/{{ site.posts.first.label }}/cover-art-1280.png">
+      <source src="https://s3.amazonaws.com/elmseeds/{{ site.posts.first.label }}/{{ site.posts.first.label }}.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   </div>
-  <div class="row main-post-meta">
+  <div class="main-post-meta">
     <h2>
-      <a href="{{ site.posts.first.url | prepend: site.baseurl }}">{{ site.posts.first.title }}</a>
+      <a href="{{ site.posts.first.url | prepend: site.baseurl }}">
+        Episode {{ site.posts.first.number }}:
+        {{ site.posts.first.title }}
+      </a>
       <small>{{ site.posts.first.date | date: "%b %-d, %Y" }}</small>
     </h2>
-    <div class="twelve columns first-post-description">
+    <div class="first-post-description">
       {{ site.posts.first.excerpt }}
     </div>
   </div>
@@ -24,25 +25,27 @@ layout: default
 
 <div class="previous-episodes-bg">
   <div class="container">
-    <div class="row recent">
+    <div>
       <h3>Recent Episodes</h4>
-    </div>
-    <div class="row">
       {% for post in site.posts limit:3 offset:1 %}
-        <div class="one-third column">
+        <div class="recent-ep">
           {% include little-vid.html post=post %}
         </div>
       {% endfor %}
+      <div class="cb"></div>
     </div>
-    <div class="row recent">
-      <h3>Archive</h4>
-    </div>
-    <div class="row">
-        {% for post in site.posts limit:20 offset:4 %}
-          <div class="row">
+    <div>
+      <h3>
+        Archive
+        <a href="/archive">See all episodes</a>
+      </h3>
+      <ul class="archive">
+        {% for post in site.posts limit:6 offset:4 %}
+          <li class="archive-ep">
             {% include archive-vid.html post=post %}
-          </div>
+          </li>
         {% endfor %}
+      </ul>
     </div>
   </div>
 </div>
