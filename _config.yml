@@ -15,7 +15,7 @@ url: "https://elmseeds.thaterikperson.com" # the base hostname & protocol for yo
 twitter_username: thaterikperson
 github_username:  thaterikperson
 permalink: /:title
-paginate: 5
+paginate: 20
 paginate_path: "/archive/:num/"
 
 # Build settings
