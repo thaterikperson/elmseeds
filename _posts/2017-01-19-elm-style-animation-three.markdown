@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Chaining Animations"
-date:   2017-01-19 11:02:00 -0500
+date:   2017-01-19 15:02:00 -0500
 categories:
 label: ep-021
 number: 21
