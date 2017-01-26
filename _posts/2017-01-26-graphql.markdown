@@ -1,0 +1,58 @@
+---
+layout: post
+title:  "GraphQL"
+date:   2017-01-26 13:22:00 -0500
+categories:
+label: ep-022
+number: 22
+tiny_description: Write GraphQL queries in Elm.
+---
+
+GraphQL is exploding in popularity for Javascript applications, but it works equally well in the type-safe world of Elm. The [elm-graphql](https://github.com/jahewson/elm-graphql) node binary will introspect a GraphQL endpoint, read your `.graphql` file, and generate a tidy Elm module you can use anywhere in your application.
+
+`elm-graphql` will recommend you install [jahewson/elm-graphql-module](http://package.elm-lang.org/packages/jahewson/elm-graphql-module/latest), but at this time it is not updated for Elm 0.18. Instead, you should install [base-dev/elm-graphql-module](http://package.elm-lang.org/packages/base-dev/elm-graphql-module/latest) until the official version is updated.
+
+
+### Examples
+
+**StarWars.graphql**
+
+```graphql
+query queryFriends($id: String!) {
+  human(id: $id) {
+    name
+    home_planet
+    appears_in
+    friends {
+      id
+      name
+    }
+  }
+}
+```
+
+**StarWars.elm**
+
+```elm
+queryFriends :
+    { id : String
+    }
+    -> Task Http.Error QueryFriends
+queryFriends params =
+    let
+        graphQLQuery =
+            """query queryFriends($id: String!) { human(id: $id) { name home_planet appears_in friends { id name } } }"""
+    in
+        let
+            graphQLParams =
+                Json.Encode.object
+                    [ ( "id", Json.Encode.string params.id )
+                    ]
+        in
+            GraphQL.query "GET" endpointUrl graphQLQuery "queryFriends" graphQLParams queryFriendsDecoder
+```
+
+#### Links
+
+* [elm-graphql](https://github.com/jahewson/elm-graphql)
+* [base-dev/elm-graphql-module](http://package.elm-lang.org/packages/base-dev/elm-graphql-module/latest)
