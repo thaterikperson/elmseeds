@@ -1,0 +1,11 @@
+query queryFriends($id: String!) {
+  human(id: $id) {
+    name
+    home_planet
+    appears_in
+    friends {
+      id
+      name
+    }
+  }
+}
