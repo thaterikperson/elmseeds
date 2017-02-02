@@ -84,7 +84,7 @@ header {
 }
 
 .container {
-  @extend .mh3, .mh4-m, .mh6-l;
+  @extend .mh3, .mh4-m, .mh6-l, .mw8, .center;
 }
 
 .previous-episodes-bg {
@@ -245,4 +245,8 @@ footer {
   .page-number {
     @extend .mh2, .f4;
   }
+}
+
+code {
+  @extend .bg-light-gray, .dark-green;
 }
