@@ -1,0 +1,78 @@
+---
+layout: post
+title:  "Upload to S3"
+date:   2017-02-23 16:28:00 -0500
+categories:
+label: ep-025
+number: 25
+tiny_description: Upload files to S3.
+---
+
+Elm 0.18 doesn't natively support multipart form bodies with files, but we can work around that using the [simonh1000/file-reader](https://github.com/simonh1000/file-reader) library. It has a native component that lets you represent file parts when submitting requests.
+
+You can't install the `file-reader` library via `elm-package install` because it has a native component, but you can copy the file into your project and set `native-modules: true` in `elm-package.json` to use it.
+
+
+### Examples
+
+**Main.elm**
+
+```elm
+update msg model =
+    case msg of
+        CredentialsResult (Ok result) ->
+            let
+                cmd =
+                    model.fileToUpload
+                        |> Maybe.map
+                            (\file ->
+                                uploadRequest result file
+                                    |> Http.send UploadComplete
+                            )
+                        |> Maybe.withDefault Cmd.none
+            in
+                model ! [ cmd ]
+
+
+uploadRequest : Credentials -> NativeFile -> Request String
+uploadRequest creds file =
+    Http.request
+        { method = "POST"
+        , headers = []
+        , url = "https://elmseeds-s3.s3.amazonaws.com"
+        , body = multiPartBody creds file
+        , expect = Http.expectString
+        , timeout = Nothing
+        , withCredentials = False
+        }
+
+
+multiPartBody : Credentials -> FR.NativeFile -> Http.Body
+multiPartBody creds nf =
+    Http.multipartBody
+        [ stringPart "key" nf.name
+        , stringPart "x-amz-algorithm" "AWS4-HMAC-SHA256"
+        , stringPart "x-amz-credential" creds.credential
+        , stringPart "x-amz-date" creds.date
+        , stringPart "policy" creds.policy
+        , stringPart "x-amz-signature" creds.signature
+        , FR.filePart "file" nf
+        ]
+```
+
+**View.elm**
+
+```elm
+div [ class "main container" ]
+    [ div [ class "row" ]
+        [ Html.form [ id "file-form", class "one-third column", onSubmit UploadImage ]
+            [ input [ type_ "file", on "change" (Json.map Files parseSelectedFiles) ] []
+            , button [] [ text "Upload" ]
+            ]
+        ]
+    ]
+```
+
+#### Links
+
+* [simonh1000/file-reader](https://github.com/simonh1000/file-reader)
