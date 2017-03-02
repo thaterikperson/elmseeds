@@ -1,0 +1,203 @@
+@import "normalize", "skeleton";
+
+html * {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #339933;
+  color: #fff;
+}
+
+a {
+  color: #fff;
+
+  &:hover {
+    color: lighten(#339933, 40%);
+  }
+}
+
+h2.card-desc {
+  color: #fff;
+}
+
+button {
+  background-color: #eee;
+  border-color: #ccc;
+  font-size: 1.5rem;
+}
+
+.card-row {
+  min-height: 320px;
+  position: relative;
+}
+
+.deck {
+  border-radius: 10px;
+  padding: 10px;
+  height: 300px;
+  width: 200px;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #444;
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  box-shadow: 1px 1px 6px #777;
+}
+
+.card {
+  margin-bottom: 20px;
+  font-size: 3.5rem;
+  color: #444;
+  position: absolute;
+  left: 0;
+  background-color: transparent;
+  transform-style: preserve-3d;
+
+  .front, .back {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 10px;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 300px;
+    width: 200px;
+  }
+
+  .front {
+    background-color: #fff;
+    box-shadow: 1px 1px 6px #777;
+
+    label {
+      text-align: right;
+      margin-bottom: 0;
+      line-height: 1.2;
+
+      &.flip {
+        transform: rotateZ(180deg);
+        position: absolute;
+      }
+
+      &.card-type {
+        bottom: 1rem;
+      }
+
+      &.card-suit {
+        bottom: 5rem;
+      }
+    }
+  }
+
+  .red {
+    color: #e00043;
+  }
+
+  .back {
+    background-color: #444;
+    border: 1px solid #777;
+  }
+}
+
+.card.discarded {
+  left: 220px;
+  box-shadow: none;
+}
+
+.error {
+  color: #993333;
+}
+
+.links {
+  text-align: right;
+  a {
+    margin-left: 10px;
+  }
+}
+
+.black {
+  .card {
+    background-color: #fff;
+  }
+
+  .deck {
+    background-color: #444;
+  }
+}
+
+.red {
+  .card  {
+    background-color: #333;
+    color: #eee;
+  }
+
+  .deck {
+    background-color: #833;
+  }
+}
+
+.blue {
+  .card  {
+    background-color: #ccf;
+    color: #338;
+  }
+
+  .deck {
+    background-color: #338;
+  }
+}
+
+.main {
+  padding-top: 6rem;
+}
+
+.menu {
+  background: #c6ecc6;
+  color: #333;
+  padding: 1rem 2rem;
+
+  a {
+    float: right;
+    color: #333;
+  }
+}
+
+.submenu-w {
+  position: relative;
+}
+
+.submenu {
+  background: #98dd98;
+  padding: 1rem 2rem;
+  // border-top: 2px solid rgba(204, 204, 204, 0.7);
+  text-align: right;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+
+  a {
+    color: #444;
+    padding-left: 2rem;
+  }
+}
+
+.all-text {
+  word-break: break-all;
+}
+
+.drop-form {
+  border: 1px dashed #fff;
+  text-align: center;
+  padding: 4rem 8rem;
+  margin-bottom: 2rem;
+}
+
+.drop-form-hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.drop-error {
+  background-color: rgba(255, 10, 10, 0.5);
+}
