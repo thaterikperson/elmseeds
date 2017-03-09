@@ -17,10 +17,27 @@ p {
 }
 
 .main-header {
-  @extend .pb6;
+  // renable after workshop
+  // @extend .pb6;
 
   .right-text {
     @extend .mb5;
+  }
+}
+
+.workshop {
+  @extend .pa3;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  background-color: #f9fbd0;
+  border: 1px solid #f3f7a1;
+
+  h1 {
+    @extend .ma0;
+
+    a {
+      color: #333;
+    }
   }
 }
 
@@ -119,9 +136,10 @@ footer {
   }
 }
 
-#main-video {
-  margin-top: -9rem;
-}
+// renable after workshop
+// #main-video {
+//   margin-top: -9rem;
+// }
 
 .little-vid {
   img {
