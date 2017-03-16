@@ -6,10 +6,11 @@
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
+  {% if jekyll.environment != "production" %}
   <script type="text/javascript">
-    var enforce = "{{ site.enforce_ssl }}";
-    if ((enforce == window.location.host) && (window.location.protocol != "https:")) window.location = window.location.toString().replace(/^http:/, "https:");
+    if (window.location.protocol != "https:") window.location = window.location.toString().replace(/^http:/, "https:");
   </script>
+  {% endif %}
   <link rel="stylesheet" href="{{ "/css/main.css?v=5" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
