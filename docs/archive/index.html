@@ -1,0 +1,24 @@
+---
+layout: archive
+---
+<div class="container archive-page">
+  <h2>Archive</h2>
+  <h3>Episodes {{ paginator.posts.first.number }}…{{ paginator.posts.last.number }}</h3>
+  <ul class="archive">
+    {% for post in paginator.posts %}
+      <li class="archive-ep">
+        {% include archive-vid.html post=post %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="previous">&larr; Previous</a>
+    {% endif %}
+    <span class="page-number ">{{ paginator.page }} of {{ paginator.total_pages }}</span>
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="next">Next &rarr;</a>
+    {% endif %}
+  </div>
+</div>
