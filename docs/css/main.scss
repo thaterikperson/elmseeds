@@ -1,0 +1,252 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+@import "tachyons", "normalize", "highlight";
+
+$bright-color: #339933;
+$heading-color: darken($bright-color, 15%);
+$light-heading-color: lighten($heading-color, 65%);
+
+p {
+  @extend .lh-copy;
+}
+
+.archive-header {
+  @extend .pb4;
+}
+
+.main-header {
+  @extend .pb6;
+
+  .right-text {
+    @extend .mb5;
+  }
+}
+
+header {
+  @extend .pt2;
+  background-color: $bright-color;
+
+  .title {
+    @extend .fl-ns, .w-50-ns;
+  }
+
+  .right-text {
+    @extend .tr-ns, .f4, .white, .fl-ns, .w-50-ns, .pl4-ns;
+
+    @media #{$breakpoint-not-small} {
+      margin-top: 80px;
+    }
+
+    a {
+      color: #f4d06b;
+
+      &:hover {
+        color: darken(#f4d06b, 20%)
+      }
+    }
+  }
+
+  h1 {
+    @extend .mb0;
+
+    .site-title {
+      color: #fdf6e3;
+      text-decoration: none;
+      font-size: 4.3rem;
+
+      @media (min-width: 730px) {
+        font-size: 5rem;
+      }
+
+      &:hover {
+        color: #fdf6e3;
+        border-bottom: 1px solid #fdf6e3;
+      }
+
+      .title-left-half {
+        @extend .fw2;
+        &:hover {
+          color: #fdf6e3;
+        }
+      }
+
+      .title-right-half {
+        @extend .fw4;
+        color: #f4d06b;
+        &:hover {
+          color: #f4d06b;
+        }
+      }
+    }
+  }
+}
+
+.container {
+  @extend .mh3, .mh4-m, .mh6-l, .mw8, .center;
+}
+
+.previous-episodes-bg {
+  @extend .bg-light-gray, .pv3;
+
+  h3 {
+    @extend .f1, .lh-title, .mb3;
+    color: $heading-color;
+
+    a {
+      @extend .f4, .ml3;
+      color: $bright-color;
+    }
+  }
+}
+
+footer {
+  background-color: #339933;
+  color: #fff;
+
+  a {
+    color: #fff;
+
+    &:hover {
+      color: #ddd;
+    }
+  }
+
+  .container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+#main-video {
+  margin-top: -9rem;
+}
+
+.little-vid {
+  img {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 10px #ccc;
+  }
+}
+
+.main-post-meta {
+  @extend .mb5;
+
+  h2 {
+    @extend .f2, .mb0;
+    a {
+      color: $heading-color;
+
+      &:hover {
+        background: $light-heading-color;
+        outline: 0.5rem solid $light-heading-color;
+      }
+    }
+    small {
+      @extend .ttu, .silver, .tracked-tight, .f5;
+    }
+  }
+
+  #links + ul {
+    li {
+      @extend .mb2;
+    }
+    a {
+      color: $heading-color;
+    }
+  }
+}
+
+.recent-ep {
+  @extend .fl-ns, .w-33-ns, .ph2-ns, .mb4;
+}
+
+.little-post-meta {
+  .little-post-title {
+    a {
+      @extend .f3, .fw6;
+      color: $heading-color;
+
+      &:hover {
+        background: $light-heading-color;
+        outline: 0.25rem solid $light-heading-color;
+      }
+    }
+
+    .little-post-date {
+      @extend .ttu, .tracked-tight, .f6, .mid-gray, .fw2;
+    }
+  }
+
+  .little-post-description {
+    @extend .mt1;
+  }
+}
+
+.archive {
+  @extend .ma0, .pa0, .list;
+
+  li {
+    @extend .mt4, .pt4, .bt;
+    border-color: $heading-color;
+
+    &:last-child {
+      @extend .mb4, .pb4, .bb;
+    }
+
+    .little-post-title a {
+      @extend .mr1;
+    }
+
+    .little-post-date {
+      @extend .db, .dib-ns;
+    }
+  }
+}
+
+.recent {
+  @extend .f1, .lh-title;
+  color: $heading-color;
+}
+
+.first-post-description {
+  p {
+
+    code {
+      padding: 0 .2rem;
+    }
+  }
+}
+
+.archive-page {
+  h2 {
+    @extend .f1, .lh-title, .mb0;
+    color: $heading-color;
+  }
+
+  h3 {
+    @extend .f3, .ttu, .lh-title, .mb3, .mt0;
+    color: $bright-color;
+  }
+}
+
+.pagination {
+  @extend .mb6;
+
+  a {
+    @extend .br2, .ph3, .pv2, .f5, .no-underline, .dib, .grow;
+    border-bottom: 2px solid darken($heading-color, 10%);
+    background: $heading-color;
+    color: white;
+  }
+
+  .page-number {
+    @extend .mh2, .f4;
+  }
+}
+
+code {
+  @extend .bg-light-gray, .dark-green;
+}

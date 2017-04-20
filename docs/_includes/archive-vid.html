@@ -1,0 +1,12 @@
+<div class="little-post-meta">
+  <div class="little-post-title">
+    <a href="{{ include.post.url | prepend: site.baseurl }}">
+      Ep. {{ include.post.number }}:
+      {{ include.post.title }}
+    </a>
+    <span class="little-post-date">{{ include.post.date | date: "%b %-d, %Y" }}</span>
+  </div>
+  <div class="little-post-description">
+    {{ include.post.tiny_description }}
+  </div>
+</div>

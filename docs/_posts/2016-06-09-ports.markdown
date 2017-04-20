@@ -1,0 +1,45 @@
+---
+layout: post
+title:  "Ports"
+date:   2016-06-09 14:00:00 -0500
+categories:
+label: ep-004
+number: 4
+tiny_description: Using ports in Elm 0.17+.
+---
+
+Ports are Elms method of getting data into and out of your program via Javascript. As long as the data you want to move around can be simply converted to json, it will work over a port.
+
+Read the [full guide on ports](https://evancz.gitbooks.io/an-introduction-to-elm/content/interop/javascript.html) for more examples.
+
+### Samples
+
+##### Main module
+```
+port module Core exposing (..)
+
+import --…
+
+port dealOne : (Bool -> msg) -> Sub msg
+
+port sendToJs : Int -> Cmd msg
+
+main = Html.program
+  { init = init
+  , update = update
+  , view = view
+  , subscriptions = (\model -> dealOne DealOneCardMsg)
+  }
+```
+
+##### index.html
+```
+<script>
+core = Elm.Core.embed(/*…*/)
+core.ports.dealOne.send(true);
+
+core.ports.sendToJs.subscribe(function (val) {
+  console.log(val);
+});
+</script>
+```

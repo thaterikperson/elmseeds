@@ -1,0 +1,47 @@
+---
+layout: post
+title:  "Elm Plot"
+date:   2017-03-23 11:17:00 -0500
+categories:
+label: ep-029
+number: 29
+tiny_description: Draw SVG line and bar charts with ease.
+---
+
+[Terezka's Elm Plot](http://package.elm-lang.org/packages/terezka/elm-plot/latest) gives you a simple API for drawing charts. You choose the type of chart, give it X and Y values, and Elm Plot handles the dirty work of sizing the chart and drawing the line, points, and bars in SVG.
+
+Charts can be customized as much as you want, or you can stick with the good looking defaults.
+
+### Examples
+
+**View.elm**
+
+```elm
+plot : Model -> Dict Int Float -> Html Msg
+plot model gains =
+    Plot.viewSeries
+        [ Plot.line (List.map (\{ index, gain } -> Plot.triangle (toFloat index) gain))
+        , Plot.line
+            (List.map
+                (\{ index } ->
+                    let
+                        gain =
+                            Dict.get index gains
+                                |> Maybe.withDefault 0
+
+                        color =
+                            if gain > 0 then
+                                "black"
+                            else
+                                "red"
+                    in
+                        Plot.dot (Plot.viewTriangle color) (toFloat index) gain
+                )
+            )
+        ]
+        model.days
+```
+
+#### Links
+
+* [terezka/elm-plot](http://package.elm-lang.org/packages/terezka/elm-plot/latest)

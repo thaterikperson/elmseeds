@@ -1,0 +1,20 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <a href="{{ "/feed.xml" | prepend: site.baseurl }}">Subscribe via RSS</a>
+      &middot;
+      <a href="https://twitter.com/thaterikperson">@thaterikperson</a>
+      &middot;
+      <a href="https://thaterikperson.com">thaterikperson.com</a>
+      &middot;
+      <a href="https://theredace.thaterikperson.com/">The Red Ace</a>
+    </div>
+  </div>
+  <script src="/scripts/highlight.pack.js"></script>
+  {% if jekyll.environment == "production" %}
+     {% include analytics.html %}
+  {% endif %}
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+</footer>
