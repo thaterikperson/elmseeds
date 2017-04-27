@@ -6,7 +6,7 @@ elm.js
 _site/
 node_modules/
 deps/
-priv/static/*
+priv/static/
 _build
 main.js
 *.css.map
