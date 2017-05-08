@@ -22,6 +22,10 @@ p {
   .right-text {
     @extend .mb5;
   }
+
+  .sep {
+    @extend .mh1;
+  }
 }
 
 header {
@@ -84,7 +88,7 @@ header {
 }
 
 .container {
-  @extend .mh3, .mh4-m, .mh6-l, .mw8, .center;
+  @extend .mh3, .mh4-m, .mh6-l, .mw8;
 }
 
 .previous-episodes-bg {
@@ -220,7 +224,7 @@ footer {
   }
 }
 
-.archive-page {
+.other-page {
   h2 {
     @extend .f1, .lh-title, .mb0;
     color: $heading-color;
@@ -230,6 +234,22 @@ footer {
     @extend .f3, .ttu, .lh-title, .mb3, .mt0;
     color: $bright-color;
   }
+
+  p {
+    @extend .measure-wide;
+  }
+}
+
+ul.tools {
+  li {
+    @extend .pv1;
+  }
+}
+
+img.profile {
+  @extend .fr;
+  width: 150px;
+  border-radius: 5px;
 }
 
 .pagination {
