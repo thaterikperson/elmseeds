@@ -1,0 +1,61 @@
+@import "normalize", "skeleton";
+
+html * {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #339933;
+  color: #fff;
+}
+
+a {
+  color: #fff;
+
+  &:hover {
+    color: lighten(#339933, 40%);
+  }
+}
+
+input {
+  color: #333;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  width: 300px;
+}
+
+textarea {
+  color: #333;
+  width: 400px;
+  height: 100px;
+}
+
+h2.card-desc {
+  color: #fff;
+}
+
+button {
+  background-color: #eee;
+  border-color: #ccc;
+  font-size: 1.5rem;
+}
+
+.error {
+  color: #993333;
+}
+
+.links {
+  text-align: right;
+  a {
+    margin-left: 10px;
+  }
+}
+
+.main {
+  padding-top: 6rem;
+}
+
+.all-text {
+  word-break: break-all;
+}
