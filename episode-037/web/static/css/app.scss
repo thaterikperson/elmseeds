@@ -1,0 +1,134 @@
+@import "normalize", "skeleton";
+
+$throbber-color: #bbb !default;
+$throbber-highlight-color: #eee !default;
+$throbber-height: 1.5em !default;
+$throbber-segment-width: 0.9em !default;
+$throbber-spacing: 0.7em !default;
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} { @content }
+  @-moz-keyframes #{$name} { @content }
+  @-o-keyframes #{$name} { @content }
+  @keyframes #{$name} { @content }
+}
+
+@mixin experimental($property, $value, $moz: true, $webkit: true, $o: true, $ms: true, $khtml: true, $official: true) {
+  @if $webkit   { -webkit-#{$property} : $value; }
+  @if $khtml    {  -khtml-#{$property} : $value; }
+  @if $moz      {    -moz-#{$property} : $value; }
+  @if $ms       {     -ms-#{$property} : $value; }
+  @if $o        {      -o-#{$property} : $value; }
+  @if $official {         #{$property} : $value; }
+}
+
+@mixin animation($value) {
+  @include experimental(animation, $value, -webkit, -moz, -ms, -o, official);
+}
+
+@include keyframes(throbber) {
+  0%  { background: $throbber-color }
+  10% { background: $throbber-highlight-color }
+  40% { background: $throbber-color }
+}
+
+html * {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #339933;
+  color: #fff;
+}
+
+a {
+  color: #fff;
+
+  &:hover {
+    color: lighten(#339933, 40%);
+  }
+}
+
+input {
+  color: #333;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  width: 300px;
+}
+
+textarea {
+  color: #333;
+  width: 400px;
+  height: 100px;
+}
+
+h2.card-desc {
+  color: #fff;
+}
+
+button {
+  background-color: #eee;
+  border-color: #ccc;
+  font-size: 1.5rem;
+}
+
+.error {
+  color: #993333;
+}
+
+.links {
+  text-align: right;
+  a {
+    margin-left: 10px;
+  }
+}
+
+.loading {
+  height: 200px;
+}
+
+.main {
+  padding-top: 6rem;
+}
+
+.all-text {
+  word-break: break-all;
+}
+
+.throbber {
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.throbber:not(:required) {
+  @include animation(throbber 2000ms 300ms infinite ease-out);
+  background: $throbber-color;
+  display: inline-block;
+  position: relative;
+  text-indent: -9999px;
+  width: $throbber-segment-width;
+  height: $throbber-height;
+  margin: 0 ($throbber-segment-width + $throbber-spacing);
+
+  &:before, &:after {
+    background: $throbber-color;
+    content: '\x200B';
+    display: inline-block;
+    width: $throbber-segment-width;
+    height: $throbber-height;
+    position: absolute;
+    top: 0;
+  }
+
+  &:before {
+    @include animation(throbber 2000ms 150ms infinite ease-out);
+    left: -($throbber-segment-width + $throbber-spacing);
+  }
+
+  &:after {
+    @include animation(throbber 2000ms 450ms infinite ease-out);
+    right: -($throbber-segment-width + $throbber-spacing);
+  }
+}
