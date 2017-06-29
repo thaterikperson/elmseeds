@@ -1,0 +1,15 @@
+{
+  "name": "episode-039",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "elm-webpack-loader": "^4.3.1",
+    "webpack": "^3.0.0"
+  }
+}
