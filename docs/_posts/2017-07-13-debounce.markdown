@@ -1,0 +1,72 @@
+---
+layout: post
+title:  "Debounce"
+date:   2017-07-13 14:31:00 -0400
+categories:
+label: ep-041
+number: 41
+tiny_description: Write your own debouncing function.
+---
+
+Debouncing is a common requirement when it comes to features like autocomplete search, input validation, or performing expensive functions during scrolling. Elm doesn't have a built-in way to debounce a function, so let's write our own.
+
+
+### Examples
+
+**Main.elm**
+
+```elm
+type alias Debouncer a b =
+    { function : a -> b
+    , parameter : a
+    , timeout : Time
+    , tag : Int
+    }
+
+
+call : a -> Debouncer a b -> ( Debouncer a b, Cmd Msg )
+call parameter debouncer =
+    ( { debouncer | parameter = parameter, tag = debouncer.tag + 1 }
+    , Process.sleep debouncer.timeout
+        |> Task.perform (\_ -> (Timeout (debouncer.tag + 1)))
+    )
+
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        PasswordUpdated password ->
+            let
+                ( debouncer, cmd ) =
+                    call password model.debouncer
+            in
+                ( { model | password = password, debouncer = debouncer }
+                , cmd
+                )
+
+        Timeout tag ->
+            let
+                input =
+                    if tag == model.debouncer.tag then
+                        model.debouncer.function (Debug.log "param" model.debouncer.parameter)
+                    else
+                        model.passwordInput
+            in
+                ( { model | passwordInput = input }, Cmd.none )
+
+
+initialModel : Model
+initialModel =
+    { debouncer =
+        { function = validate
+        , parameter = ""
+        , timeout = Time.second
+        , tag = 0
+        }
+    }
+
+```
+
+#### Links
+
+* [Debouncing and Throttling Explained Through Examples](https://css-tricks.com/debouncing-throttling-explained-examples/)
