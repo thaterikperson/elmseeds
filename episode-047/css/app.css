@@ -1,0 +1,203 @@
+textarea {
+  width: 100%;
+  height: 300px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+}
+
+label {
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+
+body {
+    font-size: 14px;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.multiselectWrap {
+    position: relative;
+    width: 100%;
+}
+
+.multiselectContainer {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    border-color: #d9d9d9 #ccc #b3b3b3;
+    background-color: #fff;
+    color: #333;
+    height: 34px;
+    width: 100%;
+    display: table;
+}
+
+.multiselectInputWrap {
+    display: inline-block;
+    margin-left: 5px;
+    padding: 0;
+    vertical-align: middle;
+    padding-bottom: 8px;
+}
+
+.multiselectInput {
+    border-style: none;
+    border: 0;
+    line-height: 14px;
+    outline-style: none;
+    font-size: inherit;
+    line-height: 1;
+    padding: 0;
+    padding-top: 8px;
+}
+
+.multiselectInputMirrow {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    height: 0;
+    overflow: scroll;
+    font-weight: normal;
+    font-style: normal;
+    font-size: inherit;
+    line-height: 1;
+}
+
+.multiselectFocused {
+    border-color: #007eff;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 3px rgba(0, 126, 255, 0.1);
+}
+
+.multiselectOpened {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.multiselectTagWrap {
+    display: inline;
+}
+
+.multiselectTag {
+    color: #007eff;
+    border: 1px solid;
+    border-color: rgba(0, 126, 255, 0.24);
+    border-radius: 2px;
+    background-color: rgba(0, 126, 255, 0.08);
+    display: inline-block;
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin-left: 5px;
+    margin-top: 5px;
+    vertical-align: top;
+}
+
+.multiselectTagIcon {
+    cursor: pointer;
+    border-right: 1px solid rgba(0, 126, 255, 0.24);
+    padding: 1px 5px 3px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.multiselectTagIcon:hover {
+    background-color: #d8eafd;
+}
+
+.multiselectTagLabel {
+    padding: 2px 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.multiselectClearWrap {
+    width: 17px;
+    color: #999;
+    cursor: pointer;
+    display: table-cell;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.multiselectClearWrap:hover {
+    color: #D0021B;
+}
+
+.multiselectClearWrap > .multiselectClear {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.multiselectArrowWrap {
+    cursor: pointer;
+    display: table-cell;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 25px;
+    padding-right: 5px;
+}
+
+.multiselectArrowWrap:hover > .multiselectArrow {
+    border-top-color: #666;
+}
+
+.multiselectArrowWrap:hover > .multiselectArrowUpside {
+    border-bottom-color: #666;
+}
+
+.multiselectArrowWrap > .multiselectArrow {
+    border-color: #999 transparent transparent;
+    border-style: solid;
+    border-top-width: 5px;
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-bottom-width: 2.5px;
+    display: inline-block;
+    height: 0;
+    width: 0;
+    position: relative;
+}
+
+.multiselectArrowWrap > .multiselectArrowUpside {
+    border-color: transparent transparent #999;
+    border-style: solid;
+    border-top-width: 2.5px;
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-bottom-width: 5px;
+    display: inline-block;
+    height: 0;
+    width: 0;
+    position: relative;
+    top: -2.5px;
+}
+
+.multiselectMenu {
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top-color: #e6e6e6;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+    margin-top: -1px;
+    max-height: 200px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    overflow-y: scroll;
+}
+
+.multiselectMenuItem {
+    color: #666;
+    cursor: pointer;
+    padding: 8px 10px;
+    max-height: 32px;
+}
+
+.multiselectMenuItemHovered {
+    background-color: rgba(0, 126, 255, 0.08);
+    color: #333;
+}
