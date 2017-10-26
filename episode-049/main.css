@@ -1,0 +1,12 @@
+.mainGreenBg {
+    height: 300px;
+    background-color: rgb(51, 153, 51);
+}
+
+.mainWhite {
+    color: #ffffff;
+}
+
+.mainYellow {
+    color: rgb(244, 208, 107);
+}

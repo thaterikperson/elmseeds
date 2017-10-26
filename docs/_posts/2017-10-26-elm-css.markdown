@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "Elm-Css"
+date:   2017-10-26 14:00:00 -0400
+categories:
+label: ep-049
+number: 49
+tiny_description: Generate Css with Elm.
+---
+
+[Elm-Css](http://package.elm-lang.org/packages/rtfeldman/elm-css/latest) can be used to write type-safe inline styles or generate Css files that you can include in your application normally.
+
+### Examples
+
+**Styles.elm**
+
+```elm
+type Classes
+    = GreenBg
+    | White
+    | Yellow
+
+
+css : Css.Stylesheet
+css =
+    Css.stylesheet <|
+        Css.Namespace.namespace "main"
+            [ Css.class GreenBg
+                [ Css.height (Css.px 300), Css.backgroundColor (Css.rgb 51 153 51) ]
+            , Css.class White
+                [ Css.color Colors.white ]
+            , Css.class Yellow
+                [ Css.color (Css.rgb 244 208 107) ]
+            ]
+```
+
+**View.elm**
+
+```elm
+{ id, class, classList } =
+    Html.CssHelpers.withNamespace "main"
+
+
+view : Model -> Html msg
+view model =
+    Html.header [ class [ GreenBg ] ]
+        [ div []
+            [ a [ href "/" ]
+                [ span [] [ text "Elm" ]
+                , span [] [ text "seeds" ]
+                ]
+            ]
+        ]
+
+```
+
+#### Links
+
+* [rtfeldman/elm-css](http://package.elm-lang.org/packages/rtfeldman/elm-css/latest)
+* [Stackoverflow: Run command after webpack build](https://stackoverflow.com/questions/30312715/run-command-after-webpack-build/35337516)
