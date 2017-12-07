@@ -5,7 +5,7 @@ date:   2017-11-09 14:08:00 -0500
 categories:
 label: ep-050
 number: 50
-tiny_description: The fastest way to get up and running wil Elm locally.
+tiny_description: The fastest way to get up and running with Elm locally.
 ---
 
 [Elm-Live](https://github.com/tomekwi/elm-live) provides automatic compliation, a web server, and live reloading in a convenient package.
