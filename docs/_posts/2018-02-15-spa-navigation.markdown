@@ -19,7 +19,7 @@ which we can use to determine which page to render in the view.
 **shell**
 ```sh
 # Force the server to render index.html on 404s
-./node_modules/.bin/webpack-dev-server --history-fallback-api
+./node_modules/.bin/webpack-dev-server --history-api-fallback
 ```
 
 **Main.elm**
